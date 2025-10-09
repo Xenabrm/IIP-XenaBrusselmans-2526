@@ -1,3 +1,7 @@
-# Introductie in Programmeren 1
+# Introductie in Programmeren
 
-## Oefeningen 01.basis
+- Academiejaar: 2025-2026
+- Opleiding: Graduaat systeem- en Netwerkbeheer
+- Klasgroep: 1PRD17
+- Naam: Xena Brusselmans
+
