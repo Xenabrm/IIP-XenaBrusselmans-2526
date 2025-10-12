@@ -1,6 +1,6 @@
 using System;
 
-namespace Template
+namespace ConsoleBmi
 {
    class Program
    {
