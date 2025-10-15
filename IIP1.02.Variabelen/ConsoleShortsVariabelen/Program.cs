@@ -38,8 +38,9 @@ class Program
 		Console.WriteLine("\n\nOefening A.1: Eerste variabelen\n------------\n");
 		// TODO: implementeer hier
 		string naamstudent = "Sarah";
-		int studentScore = 85;
-		Console.WriteLine();
+		int studentscore = 85;
+		Console.WriteLine($@"{naamstudent}
+{studentscore}");
 
 		/* --- Oefening A.2: Favoriete kleur en leeftijd ---
 		 * Context: Je schrijft een klein programma dat je eigen favoriete kleur en leeftijd weergeeft.
@@ -54,9 +55,9 @@ class Program
 		 */
 		Console.WriteLine("\n\nOefening A.2: Favoriete kleur en leeftijd\n------------\n");
 		// TODO: implementeer hier
-		string favorieteKleur;  "groen";
-		int leeftijd; 21;
-		Console.WriteLine ("Mijn favoriete kleur is {favorieteKleur} en ik ben {leeftijd}.");
+		string favorieteKleur =  "groen";
+		int leeftijd = 21;
+		Console.WriteLine($"Mijn favoriete kleur is {favorieteKleur} en ik ben {leeftijd}.");
 		
 
 		/* --- Oefening A.3: Productgegevens ---
@@ -93,7 +94,12 @@ class Program
 		 */
 		Console.WriteLine("\n\nOefening A.4: Variabele hergebruiken\n------------\n");
 		// TODO: implementeer hier
-		// ...
+		int aantalbezoekers = 100;
+		Console.WriteLine();
+		aantalbezoekers += 50;
+		Console.WriteLine("Begin aantal bezoekers: 100");
+		Console.WriteLine($"nieuw aantal bezoekers: {aantalbezoekers}");
+		
 
 		/* --- Oefening A.5: Karakter en status ---
 		 * Context: Je houdt de status van een bestelling bij. Dit kan "verzonden", "geannuleerd" of "in behandeling" zijn.
@@ -111,8 +117,14 @@ class Program
 		 */
 		Console.WriteLine("\n\nOefening A.5: Karakter en status\n------------\n");
 		// TODO: implementeer hier
-		// ...
-
+		char bestelStatus = 'V';
+		bool isVerzonden = true;
+		string bestelID = "ABC1234";
+		Console.WriteLine($@"
+Bestel-ID: {bestelID}
+Statuscode: {bestelStatus} 
+Is verzonden: {isVerzonden}");
+		
 		#endregion
 
 		#region DEEL B: Invoer en combinaties
@@ -131,7 +143,11 @@ class Program
 		 */
 		Console.WriteLine("\n\nOefening B1: Gebruikersgegevens\n------------\n");
 		// TODO: implementeer hier
-		// ...
+		Console.Write("Wat is uw naam? ");
+		string naam = Console.ReadLine();
+		Console.Write("Wat is uw woonplaats? ");
+		string woonplaats = Console.ReadLine();
+		Console.WriteLine($"Welkom, {naam} uit {woonplaats}!");
 
 		/* --- Oefening B.2: Bioscoop uitnodiging ---
 		 * Context: Je organiseert een bioscoopavond en wilt een uitnodiging sturen.
@@ -147,7 +163,11 @@ class Program
 		 */
 		Console.WriteLine("\n\nOefening B.2: Bioscoop uitnodiging\n------------\n");
 		// TODO: implementeer hier
-		// ...
+		Console.Write("Wat is de naam van de film? ");
+		string movie = Console.ReadLine();
+		Console.Write("Wat is de naam van de gast? ");
+		string gast = Console.ReadLine();
+		Console.WriteLine($"Beste {gast}, je bent uitgenodigd voor de film {movie} bij Kinepolis.");
 
 		/* --- Oefening B.3: Booleaanse vlag en status ---
 		 * Context: Je maakt een programma dat bijhoudt of een lamp aan of uit is en wat de kleur is.
@@ -162,7 +182,9 @@ class Program
 		 */
 		Console.WriteLine("\n\nOefening B.3: Booleaanse vlag en status\n------------\n");
 		// TODO: implementeer hier
-		// ...
+		bool isAan = true;
+		string lampKleur = "geel";
+		Console.WriteLine($"De lamp is aan: {isAan} en heeft de kleur {lampKleur}.");
 
 		/* --- Oefening B.4: Constante groet ---
 		 * Context: Je wilt een vaste groet gebruiken in je programma.
@@ -178,7 +200,10 @@ class Program
 		 */
 		Console.WriteLine("\n\nOefening B.4: Constante groet\n------------\n");
 		// TODO: implementeer hier
-		// ...
+		const string Groet = "Hallo";
+		Console.Write("Wat is uw naam? ");
+		string name = Console.ReadLine();
+	    Console.WriteLine($"{Groet}, {name}!");
 
 		/* --- Oefening B.5: Restaurantbestelling ---
 		 * Context: Je maakt een eenvoudig programma voor een bestelling in een restaurant.
@@ -195,8 +220,15 @@ class Program
 		 */
 		Console.WriteLine("\n\nOefening B.5: Restaurantbestelling\n------------\n");
 		// TODO: implementeer hier
-		// ...
-
+		Console.Write("Wat is de naam van uw gerecht? ");
+		string dish = Console.ReadLine();
+		Console.Write("Wat is de naam van uw drankje? ");
+		string drinks = Console.ReadLine();
+		const string BedanktBoodschap = "Eet smakelijk!";
+		Console.WriteLine($@"
+Je bestelling: {dish} en {drinks}.
+{BedanktBoodschap}");
+		
 		#endregion
     }
 }
