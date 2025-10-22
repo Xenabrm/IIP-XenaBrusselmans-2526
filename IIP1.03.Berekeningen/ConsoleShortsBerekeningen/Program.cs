@@ -17,7 +17,7 @@
  */
 
 using System;
-
+using System.Globalization;
 class Program
 {
     static void Main(string[] args)
@@ -34,9 +34,15 @@ class Program
          * Testvoorbeeld:
          * Verwachte output: 87.5
          */
-        // TODO: implementeer hier
-
-        Console.WriteLine("\n---------------------\n");
+        int score1 = 80;
+		int score2 = 95;
+		int resultaat = score1 + score2;
+		int totaalScore = resultaat;
+		double gemiddelde = totaalScore /2;
+		Console.WriteLine(gemiddelde.ToString("0.0"));
+		
+		
+	    Console.WriteLine("\n---------------------\n");
 
         /* --- Oefening 2: Modulo en Increment ---
          * Context: Je wilt de rest van een deling weten en daarna een teller verhogen.
@@ -53,8 +59,13 @@ class Program
          * De rest is: 3
          * Het nieuwe aantal is: 16
          */
-        // TODO: implementeer hier
-
+         int aantalItems = 15;
+		 int itemPerDoos = 4;
+		 int totaal = aantalItems % itemPerDoos;
+         aantalItems ++;		 
+         Console.WriteLine($"De rest is: {totaal}");
+		 Console.WriteLine($"Het nieuw aantal is: {aantalItems}");
+		 
         Console.WriteLine("\n---------------------\n");
 
         /* --- Oefening 3: Afronden met Math ---
@@ -70,7 +81,11 @@ class Program
          * Verwachte output:
          * 7
          */
-        // TODO: implementeer hier
+		 double totaalbedrag = 45.75;
+		 double fooi = totaalbedrag * 0.15;
+		 double afgerond = Math.Ceiling(fooi);
+		 Console.WriteLine(afgerond);
+        
 
         Console.WriteLine("\n---------------------\n");
 
@@ -87,7 +102,10 @@ class Program
          * Verwachte output:
          * P123
          */
-        // TODO: implementeer hier
+         char prefix = 'p';
+		 int nummer = 123;
+		 string productCode = prefix + nummer.ToString();
+		 Console.WriteLine(productCode);
 
         Console.WriteLine("\n---------------------\n");
 
@@ -105,7 +123,11 @@ class Program
          * FRANK
          * 5
          */
-        // TODO: implementeer hier
+        string gebruikersNaam = "frank";
+		gebruikersNaam = gebruikersNaam.Trim();
+		string naamInHoofdletters = gebruikersNaam.ToUpper();
+		Console.WriteLine(naamInHoofdletters);
+		Console.WriteLine(naamInHoofdletters.Length);
 
         Console.WriteLine("\n---------------------\n");
 
@@ -121,7 +143,10 @@ class Program
          * Testvoorbeeld:
          * Verwachte output: True
          */
-        // TODO: implementeer hier
+         bool isVoldoendeScore = true;
+		 bool heeftAanwezigheid = true;
+		 bool geslaagd = isVoldoendeScore && heeftAanwezigheid;
+		 Console.WriteLine(geslaagd);
 
         Console.WriteLine("\n---------------------\n");
 
@@ -138,7 +163,10 @@ class Program
          * Verwachte output:
          * Het ingevoerde getal is: 42
          */
-        // TODO: implementeer hier
+		 Console.Write("Voer een getal in: ");
+         string invoerTekst = Console.ReadLine();
+		 int invoerGetal = Convert.ToInt32(invoerTekst);
+		 Console.WriteLine($"Het ingevoerde getal is: {invoerGetal}");
 
         Console.WriteLine("\n---------------------\n");
 
@@ -155,7 +183,9 @@ class Program
          * Verwachte output:
          * 10.00
          */
-        // TODO: implementeer hier
+         double prijs = 9.995;
+		 string geformatteerdePrijs = prijs.ToString("F2");
+		 Console.WriteLine(geformatteerdePrijs);
 
         Console.WriteLine("\n---------------------\n");
 
@@ -171,7 +201,8 @@ class Program
          * Verwachte output:
          * Vandaag is dag 25 in maand 9
          */
-        // TODO: implementeer hier
+         DateTime huidigeDatum = DateTime.Now;
+		 Console.WriteLine($"vandaag is dag {huidigeDatum.Day} in maand {huidigeDatum.Month}");
 
         Console.WriteLine("\n---------------------\n");
 
@@ -188,7 +219,9 @@ class Program
          * Verwachte output:
          * 09/10/2024 0:00:00
          */
-        // TODO: implementeer hier
+         DateTime vandaag = DateTime.Today;
+		 DateTime toekomstDatum = vandaag.AddDays(14);
+		 Console.WriteLine(toekomstDatum);
 
         Console.WriteLine("\n---------------------\n");
 
@@ -205,7 +238,10 @@ class Program
          * Verwachte output:
          * 3
          */
-        // TODO: implementeer hier
+         int totaalAppels = 10;
+		 int aantalStudenten = 3;
+		 int appelsPerStudent = totaalAppels / aantalStudenten;
+		 Console.WriteLine(appelsPerStudent);
 
         Console.WriteLine("\n---------------------\n");
 
@@ -221,7 +257,9 @@ class Program
          * Verwachte output:
          * 95
          */
-        // TODO: implementeer hier
+         int score = 85;
+		 score += 10;
+		 Console.WriteLine(score);
 
         Console.WriteLine("\n---------------------\n");
 
@@ -237,7 +275,9 @@ class Program
          * Verwachte output:
          * False
          */
-        // TODO: implementeer hier
+         bool isActief = true;
+		 bool isInactief = !isActief;
+		 Console.WriteLine(isInactief);
 
         Console.WriteLine("\n---------------------\n");
 
@@ -254,7 +294,10 @@ class Program
          * Verwachte output:
          * True
          */
-        // TODO: implementeer hier
+         bool isWachtwoordCorrect = false;
+		 bool isEmailCorrect = true;
+		 bool inLoggenMogelijk = isWachtwoordCorrect || isEmailCorrect;
+		 Console.WriteLine(inLoggenMogelijk);
 
         Console.WriteLine("\n---------------------\n");
 
@@ -276,7 +319,11 @@ class Program
          * Verwachte output:
          * False
          */
-        // TODO: implementeer hier
+         const string AdminNaam = "admin";
+		 Console.WriteLine("voern uw naam in: ");
+		 string ingevoerdeNaam = Console.ReadLine();
+		 bool isGelijk = string.Equals(ingevoerdeNaam, AdminNaam, StringComparison.OrdinalIgnoreCase);
+		 Console.WriteLine(isGelijk);
 
         Console.WriteLine("\n---------------------\n");
 
@@ -293,7 +340,10 @@ class Program
          * Verwachte output:
          * K
          */
-        // TODO: implementeer hier
+         Console.Write("voer uw naam in: ");
+		 string naam = Console.ReadLine();
+		 char eersteLetter = string.IsNullOrEmpty(naam) ? '\0' : char.ToUpper(naam[0]);
+		 Console.WriteLine(eersteLetter);
 
         Console.WriteLine("\n---------------------\n");
 
@@ -308,8 +358,9 @@ class Program
          * Verwachte output:
          * C:\Users\documents\file.txt
          */
-        // TODO: implementeer hier
-
+         string pad = @"C:\Users\documents\file.txt";
+         Console.WriteLine(pad);
+		 
         Console.WriteLine("\n---------------------\n");
 
         /* --- Oefening 18: Gebruik van Math.Round ---
@@ -326,7 +377,10 @@ class Program
          * Verwachte output:
          * 30.24
          */
-        // TODO: implementeer hier
+         double prijsExclBtw = 24.99;
+		 double btwTarief = 0.21;
+		 double prijsInclBtw = Math.Round(prijsExclBtw * ( 1 + btwTarief), 2);
+		 Console.WriteLine(prijsInclBtw.ToString ("0.00"));
 
         Console.WriteLine("\n---------------------\n");
 
@@ -344,7 +398,11 @@ class Program
          * Lengte: 11
          * Eerste karakter: W
          */
-        // TODO: implementeer hier
+         Console.WriteLine("Voer een wachtwoord in: ");
+		 string wachtwoord = Console.ReadLine();
+		 Console.WriteLine($"Lengte: {wachtwoord.Length}");
+		 char eerstekarakter = wachtwoord.Length > 0 ? wachtwoord[0] : '\0';
+		 Console.WriteLine($"Eerste karakter: {eerstekarakter}");
 
         Console.WriteLine("\n---------------------\n");
 
@@ -361,7 +419,11 @@ class Program
          * Verwachte output:
          * True
          */
-        // TODO: implementeer hier
+         bool toets1Geslaagd = true;
+		 bool toets2Geslaagd = true;
+		 bool projectGeslaagd = false;
+		 bool geslaagdVoorSemester = (toets1Geslaagd && toets2Geslaagd) || projectGeslaagd;
+		 Console.WriteLine(geslaagdVoorSemester);
 
         Console.WriteLine("\n---------------------\n");
 
@@ -377,7 +439,10 @@ class Program
          * Als het 25 september 2024 is:
          * Verwachte output: 25 september 2024
          */
-        // TODO: implementeer hier
+         DateTime nu = DateTime.Now;
+		 string geformatteerdeDatum = nu.ToString("dd MMM yyyy", new CultureInfo("nl-BE"));
+		 Console.WriteLine(geformatteerdeDatum);
+		 
 
         Console.WriteLine("\n---------------------\n");
 
@@ -395,7 +460,11 @@ class Program
          * Verwachte output (voor 25/09/2024):
          * Leeftijd: 34
          */
-        // TODO: implementeer hier
+         DateTime geboorteDatum = new DateTime(2004, 7, 6);
+		 int leeftijd = DateTime.Today.Year - geboorteDatum.Year;
+		 Console.WriteLine($"Geboortedatum: {geboorteDatum}");
+		 Console.WriteLine($"Leeftijd: {leeftijd}");
+		 
 
         Console.WriteLine("\n---------------------\n");
 
@@ -410,7 +479,9 @@ class Program
          * Testvoorbeeld:
          * Verwachte output: 43.98...
          */
-        // TODO: implementeer hier
+         double straal = 7;
+		 double omtrek = 2 * Math.PI * straal;
+		 Console.WriteLine(omtrek);
 
         Console.WriteLine("\n---------------------\n");
 
@@ -426,7 +497,9 @@ class Program
          * Verwachte output:
          * 65
          */
-        // TODO: implementeer hier
+         char hoofdletter = 'A';
+		 int asciiWaarde = (int)hoofdletter;
+		 Console.WriteLine(asciiWaarde);
 
         Console.WriteLine("\n---------------------\n");
 
@@ -442,7 +515,9 @@ class Program
          * Verwachte output:
          * B
          */
-        // TODO: implementeer hier
+         int getal = 66;
+		 char karakter = Convert.ToChar(getal);
+		 Console.WriteLine(karakter);
 
         Console.WriteLine("\n---------------------\n");
 
@@ -461,8 +536,14 @@ class Program
          * Verwachte output:
          * 15
          */
-        // TODO: implementeer hier
-
+         Console.Write("Voer het eerste getal in: ");
+		 string 1st = Console.ReadLine();
+		 Console.Write("Voer het tweede getal in: ");
+         string 2de = Console.ReadLine();
+		 int a = int.Parse(1st);
+		 int b = int.Parse(2de);
+		 Console.WriteLine(a + b);
+		 
         Console.WriteLine("\n---------------------\n");
 
         /* --- Oefening 27: Booleaanse waarden van strings ---
@@ -478,7 +559,10 @@ class Program
          * Verwachte output:
          * True
          */
-        // TODO: implementeer hier
+         Console.Write("Ben je tevreden? (true/false) ");
+		 string antwoord = Console.ReadLine();
+		 bool isTevreden = bool.Parse(antwoord);
+		 Console.WriteLine(isTevreden);
 
         Console.WriteLine("\n---------------------\n");
 
@@ -498,7 +582,15 @@ class Program
          * gebruikersnaam: jan.janssen
          * Geldig: True
          */
-        // TODO: implementeer hier
+        Console.Write("Voer uw voornaam in:");
+		string voornaam = Console.ReadLine();
+		Console.Write("Voer uw achternaam in:");
+		string achternaam = Console.ReadLine();
+		
+		string gebruikersnaam = voornaam.ToLower() + "." + achternaam.ToLower();
+		bool geldig = gebruikersnaam.contains(".");
+		Console.WriteLine($"gebruikersnaam: {gebruikersnaam}");
+		console.WriteLine($"Geldig: {geldig}");
 
         Console.WriteLine("\n---------------------\n");
 
@@ -516,7 +608,12 @@ class Program
          * Het aantal is: 10
          * De status is: True
          */
-        // TODO: implementeer hier
+         int aantal = 10;
+		 bool isKlaar = true;
+		 string aantalTekst = aantal.ToString();
+		 string statusTekst = isKlaar.ToString();
+		 Console.WriteLine($"Het aantal is: "+ aantalTekst);
+		 Console.WriteLine($"De status is: "+ statusTekst);
 
         Console.WriteLine("\n---------------------\n");
 
@@ -534,6 +631,8 @@ class Program
          * Verwachte output:
          * 25/10/2024
          */
-        // TODO: implementeer hier
+         DateTime vandaag = DateTime.Today;
+		 DateTime volgendeMaand = vandaag.addMonths(1);
+		 Console.WriteLine(volgendeMaand.ToString("dd/MM/yyyy"));
     }
 }
