@@ -7,13 +7,13 @@ namespace Bankautomaat
    {
       static void Main()
       {
+		  decimal saldo = 500M;
 		  bool doorgaan = true;
 		  var be = new CultureInfo("nl-BE");
 
 		  Console.WriteLine("Bankautomaat");
 		  Console.WriteLine("============");
-		  Console.Write("huidig saldo: ");
-		  double saldo = Convert.ToDouble(Console.ReadLine());
+		 
 
 		  while (doorgaan)
 		  {
@@ -30,7 +30,7 @@ namespace Bankautomaat
 			  if (keuze == 'a')
 			  {
 				  Console.Write("Welk bedrag wil je afhalen: ");
-				  double bedrag = Convert.ToDouble(Console.ReadLine());
+				  int bedrag = Convert.ToInt32(Console.ReadLine());
 
 				  if (bedrag % 20 == 0 || bedrag % 50 == 0)
 				  {
@@ -49,14 +49,14 @@ namespace Bankautomaat
 			  else if (keuze == 'b')
 			  {
 				  Console.Write("welk bedrag wil je storten: ");
-				  double bedrag = Convert.ToDouble(Console.ReadLine());
+				  int bedrag = Convert.ToInt32(Console.ReadLine());
 				  saldo += bedrag;
 				  Console.WriteLine($"storting ok - het nieuw saldo is {saldo.ToString("C",be)}");
 			  }
 			  else if (keuze == 'c')
 			  {
 				   doorgaan = false;
-			  }
+			  }  
 			  else
 			  {
 				  Console.WriteLine("ongeldige keuze");
