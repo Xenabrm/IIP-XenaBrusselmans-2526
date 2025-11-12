@@ -13,22 +13,24 @@ namespace Bankautomaat
 
 		  Console.WriteLine("Bankautomaat");
 		  Console.WriteLine("============");
+		  Console.WriteLine();
 		 
 
 		  while (doorgaan)
 		  {
 
-			  Console.WriteLine($"\nHuidige saldo: {saldo.ToString("C",be)}");
-			  Console.WriteLine("a. afhaling");
-			  Console.WriteLine("b. storting");
-			  Console.WriteLine("c. stoppen");
-
+			  Console.WriteLine(@$"Huidige saldo: {saldo.ToString("C",be)}
+a. afhaling
+b. storting
+c. stoppen");
+              
 			  Console.Write("\nJe keuze: ");
 			  char keuze = char.ToLower(Console.ReadKey().KeyChar);
 			  Console.WriteLine();
 
-			  if (keuze == 'a')
+			  switch(keuze)
 			  {
+				  case 'a': 
 				  Console.Write("Welk bedrag wil je afhalen: ");
 				  int bedrag = Convert.ToInt32(Console.ReadLine());
 
@@ -45,25 +47,27 @@ namespace Bankautomaat
 				  {
 					  Console.WriteLine("fout: enkel briefjes van 20 en 50 zijn mogelijk");
 				  }
-			  }
-			  else if (keuze == 'b')
-			  {
+				  break;
+			  
+			      case'b':
 				  Console.Write("welk bedrag wil je storten: ");
-				  int bedrag = Convert.ToInt32(Console.ReadLine());
-				  saldo += bedrag;
+				  int bedrag2 = Convert.ToInt32(Console.ReadLine());
+				  saldo += bedrag2;
 				  Console.WriteLine($"storting ok - het nieuw saldo is {saldo.ToString("C",be)}");
-			  }
-			  else if (keuze == 'c')
-			  {
-				   doorgaan = false;
-			  }  
-			  else
-			  {
+				  break;
+			  
+			      case 'c':
+				  doorgaan = false;
+				  break;
+				  
+				  default:
 				  Console.WriteLine("ongeldige keuze");
-			  }
+				  break;
+				  
+			   }
 		  }
 		  
 		  Console.WriteLine("\nbedankt en tot ziens");
-	  }
-   }
+	   }
+   } 
 }
