@@ -10,7 +10,7 @@ namespace ConsoleAtm
 Bankautomaat
 ------------";
        
-	   const int MAX_AFHALING = 600;
+	   const int MAX_AFHALING = 500;
 	   int saldo = 1000;
 	    
 	  Console.WriteLine(header);
@@ -25,9 +25,9 @@ Bankautomaat
 	  char keuze = Console.ReadKey(true).KeyChar;
 	  Console.WriteLine();
 	  
-	  if (keuze == 'a')
+	  switch (keuze ='a')
 	  {
-	  
+	    case
 		  Console.WriteLine("Welk bedrag wil je afhalen: ");
 		  string invoer = Console.ReadLine();
 		  int bedrag = Convert.ToInt32(invoer);
@@ -50,7 +50,7 @@ Bankautomaat
 				Console.WriteLine($"Afhalen ok - het nieuw saldo is € {saldo}");
 		  }
 		}
-        else if (keuze =='b')
+        else if (keuze ='b')
         {    
 		   Console.Write("Welke bedrag wil je storten: ");
 		   string invoer = Console.ReadLine();
@@ -59,7 +59,7 @@ Bankautomaat
            saldo += stort;
            Console.WriteLine($"Storting ok - het nieuw saldo is € {saldo}");
         }
-        else if (keuze == 'c')
+        else if (keuze ='c')
         {
             Console.WriteLine("Bedankt en tot ziens!");
         }

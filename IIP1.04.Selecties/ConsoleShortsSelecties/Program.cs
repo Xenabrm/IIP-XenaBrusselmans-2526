@@ -33,10 +33,18 @@ class Program
          * Input: getal = 15
          * Verwachte output: Het getal is groter dan 10.
          */
-        
-        // TODO: implementeer hier.
-
-        Console.WriteLine("\n---------------------\n");
+          int getal = 0;
+		  
+		  Console.Write("getal = ");
+		  getal = Convert.ToInt32(Console.ReadLine());
+		  
+		  if (getal >= 10)
+		  {
+			 Console.WriteLine("Het getal is groter dan 10.");
+		  }
+	
+		  
+          Console.WriteLine("\n---------------------\n");
 
         /* --- Oefening 2: IF-ELSE voor pass/fail ---
          * Context: Je moet bepalen of een student geslaagd is voor een toets. De drempel is 50.
@@ -54,8 +62,20 @@ class Program
          * Verwachte output: Niet geslaagd.
          */
         
-        // TODO: implementeer hier.
-
+         int score = 0;
+		 
+		 Console.Write("score = ");
+		 score = Convert.ToInt32(Console.ReadLine());
+		 
+		 if (score >= 50)
+		 {
+			 Console.WriteLine("Geslaagd!");
+		 }
+		 else
+	     {
+			 Console.WriteLine("Niet geslaagd.");
+		 }
+		 
         Console.WriteLine("\n---------------------\n");
 
         /* --- Oefening 3: Relaties met booleaanse expressies ---
@@ -75,7 +95,22 @@ class Program
          * Verwachte output: (niets)
          */
         
-        // TODO: implementeer hier.
+         int leeftijd = 0;
+		 bool istiener = false;
+		 
+		 Console.Write("leeftijd = ");
+		 leeftijd = Convert.ToInt32(Console.ReadLine());
+		 
+		 if ( leeftijd >= 13 && leeftijd <= 19)
+		 {
+			 Console.WriteLine("Is een tiener");
+			 istiener = true;
+		 }
+		 else 
+		 {
+			 Console.WriteLine("(niets)");
+		 }
+			 
 
         Console.WriteLine("\n---------------------\n");
 
@@ -93,7 +128,22 @@ class Program
          * Verwachte output: In behandeling
          */
         
-        // TODO: implementeer hier.
+        bool isVerzonden = false;
+		string status;
+		
+		Console.Write("IsVerzonden= ");
+		status = Console.ReadLine();
+		
+		if (isVerzonden)
+		{
+			Console.WriteLine("Verzonden");
+			isVerzonden = true;
+		}
+		else
+		{
+			Console.WriteLine("In behandeling");
+			isVerzonden = false;
+		}
 
         Console.WriteLine("\n---------------------\n");
 
@@ -113,8 +163,20 @@ class Program
          * Input: ingevoerdeGebruikersnaam = "Admin"
          * Verwachte output: False
          */
-        
-        // TODO: implementeer hier.
+		const string VerplichteNaam = "admin";
+		bool isGeldig = false;
+		
+		Console.Write("ingevoerdeGebruikersnaam = ");
+		string ingevoerdeGebruikersnaam = Console.ReadLine();
+		
+		if (ingevoerdeGebruikersnaam == VerplichteNaam)
+		{
+			isGeldig = true;
+		}
+		else
+		{
+			isGeldig = false;
+		}
 
         Console.WriteLine("\n---------------------\n");
 
@@ -134,7 +196,17 @@ class Program
          * Verwachte output: False
          */
         
-        // TODO: implementeer hier.
+        char karakter = 'a';
+		char k = char.ToLower(karakter);
+		bool isklinker = false;
+		
+		isklinker = k == 'a' || k == 'e' || k == 'i' || k == 'o' || k == 'u';
+		
+		Console.Write("karakter = ");
+		karakter = char.ToLower(Console.ReaLine());
+		
+		
+		
 
         Console.WriteLine("\n---------------------\n");
 
@@ -412,5 +484,7 @@ class Program
          */
         
         // TODO: implementeer hier.
+		
+		Console.ReadKey();
     }
 }

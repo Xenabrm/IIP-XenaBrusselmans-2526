@@ -16,7 +16,7 @@ namespace ConsoleComplexiteit
 	    }
 		else
 		{
-			int aantalKarakters = woord.length;
+			int aantalKarakters = woord.Length;
 			int aantalLettergrepen = AantalLettergrepen(woord);
 			double complexiteit = Complexiteit(woord);
 			

@@ -7,30 +7,30 @@ namespace ConsoleContactCard
    {
       static void Main(string[] args)
       {
-		   
-        string naam = "Bobby Peru";
+		string naam = "Bobby peru";
 		bool gehuwd = false;
 		string telefoon = "0486/33.22.19";
-		int leeftijd = 25;
+		int leeftijd= 25;
 		decimal salaris = 2500.00m;
 		char geslacht = 'm';
-		double lengte = 1.75;
-		string info = $@"
+		decimal lengte = 1.75m;
+		var be = new CultureInfo("nl-BE");
+		
+		Console.WriteLine($@"
 ----------------
 *
 * Naam: {naam}
-* Gehuwd: {(gehuwd ? "ja" : "nee")}
+* Gehuwd: {gehuwd}
 * Telefoon: {telefoon}
-* Leeftijd: {leeftijd} jaar
-* Salaris: € {salaris} per maand
+* leeftijd: {leeftijd} jaar
+* Salaris: {salaris.ToString("C",be)} per maand
 * Geslacht: {geslacht}
-* Lengte: {lengte:F2}m 
+* Lengte: {lengte:F2}m
 *
-----------------";
-		
-		Console.WriteLine(info);
-		Console.WriteLine("druk op de toets om verder te gaan...");
-		Console.ReadKey();	
+----------------
+druk op de toets om verder te gaan...");
+        
+		Console.ReadKey();
       }
    }
 }
