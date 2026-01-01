@@ -13,36 +13,43 @@ namespace ConsoleComplexiteit
 		{
 			Console.WriteLine();
 			Console.WriteLine("Bedankt en tot ziens.");
-	    }
-		else
-		{
-			int aantalKarakters = woord.Length;
-			int aantalLettergrepen = AantalLettergrepen(woord);
-			double complexiteit = Complexiteit(woord);
 			
-			Console.WriteLine($"aantal karakters: {aantalKarakters}");
-			Console.WriteLine($"aantal lettergrepen: {aantalLettergrepen}");
-			Console.WriteLine($"complexiteit; {complexiteit:0.0}");
-			Console.WriteLine();
+			return;
 	    }
+		
+		int aantalKarakters = woord.Length;
+		int aantalLettergrepen = AantalLettergrepen(woord);
+		double complexiteit = Complexiteit(woord);
+		
+		Console.WriteLine($"aantal karakters: {aantalKarakters}");
+		Console.WriteLine($"aantal lettergrepen: {aantalLettergrepen}");
+		Console.WriteLine($"complexiteit; {complexiteit:0.0}");
+		Console.WriteLine();
+	 
       }
 	  static int AantalLettergrepen(string woord)
 	  {
 		  int count = 0;
-		  bool wasgeenklinker = true;
+		  bool wasGeenKlinker = true;
 		  
-		  foreach (char c in woord);
+		  foreach (char c in woord)
 		  {
-			  bool welklinker = isklinker(c);
+			  bool welKlinker = IsKlinker(c);
 			  
-			  if (welklinker && wasgeenklinker)
+			  if (welKlinker && wasGeenKlinker)
 			  {
 				  count++;
-			      wasgeenklinker = !welklinker;
 			  }
-			  
-			  return count;
+			      wasGeenKlinker = !welKlinker;
 		  }
+		  
+		  return count;  
+	  }
+	  
+	  static bool IsKlinker(char c)
+	  {
+		  char lower = char.ToLower(c);
+		  return lower == 'a' || lower == 'e' || lower == 'i' || lower == 'o' || lower == 'u';
 	  }
 	  
 	  static double Complexiteit(string woord)
@@ -50,7 +57,7 @@ namespace ConsoleComplexiteit
 		  int letters = woord.Length;
 		  int lettergrepen = AantalLettergrepen(woord);
 		  
-		  double score = letters / 3 + lettergrepen;
+		  double score = letters / 3.0 + lettergrepen;
 		  
 		  bool heeftQ = false;
 		  bool heeftX = false;
@@ -58,18 +65,20 @@ namespace ConsoleComplexiteit
 		  
 		  foreach (char c in woord)
 		  {
-			  char lower = c;
-			  if (c >= 'A' && c <= 'Z')
-			  {
-				  lower = (char)(c + 32);
-			  }
+			  char lower = char.ToLower(c);
 			  
 			  if (lower == 'q') heeftQ = true;
 			  if (lower == 'x') heeftX = true;
 			  if (lower == 'y') heeftY = true;
-			  
-			  return lower;
 		  }
+		  
+		  if (heeftQ) score += 1.0;
+		  if (heeftX) score += 1.0;
+		  if (heeftY) score += 0.5;
+		  
+			  
+		  return score;
+		  
 	  }
    }
 }
